@@ -11,4 +11,11 @@ export default styled.div`
   margin: 0 10px;
   width: 40%;
   transition: 0.3s;
+
+  @media only screen and (max-width: 854px) {
+    width: 60%;
+  }
+  @media only screen and (max-width: 599px) {
+    width: 70%;
+  }
 `;
