@@ -16,6 +16,7 @@ export default styled.div`
   align-self: flex-start;
   margin-top: auto;
   border-radius: 9px 9px 0 0;
+  margin-bottom: -1px;
   p {
     font-family: "Cascadia Code", sans-serif;
     color: white;
