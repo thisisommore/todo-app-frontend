@@ -6,7 +6,7 @@ type IProps = {
   width?: string;
 };
 
-const Button = styled.button<IProps>`
+const StyledButton = styled.button<IProps>`
   display: inline-flex;
   background: #a700aa;
   color: white;
@@ -32,11 +32,12 @@ type Props = PropsWithChildren<ButtonHTMLAttributes<{}>> & {
   isLoading?: boolean;
 };
 
-export default function (props: Props) {
+const Button = function (props: Props) {
   return (
-    <Button {...props}>
+    <StyledButton {...props}>
       {props.children}
       {props.isLoading ? <Spinner></Spinner> : ""}
-    </Button>
+    </StyledButton>
   );
-}
+};
+export default Button;

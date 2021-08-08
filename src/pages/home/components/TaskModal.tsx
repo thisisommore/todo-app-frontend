@@ -42,7 +42,8 @@ type FormValue = {
   content: string;
   priority: Priority;
 };
-export default function ({ show, onClose, onSuccess, task }: TProps) {
+
+const TaskModal = function ({ show, onClose, onSuccess, task }: TProps) {
   const {
     register,
     handleSubmit,
@@ -64,16 +65,16 @@ export default function ({ show, onClose, onSuccess, task }: TProps) {
       setValue("content", task.content);
       setValue("priority", task.priority);
     }
-  }, [task]);
+  }, [setValue, task]);
 
   const onSubmit = async (value: FormValue) => {
     if (task) {
       let copiedValue = { ...value } as UpdateTaskBody;
 
-      if (task.content == value.content) {
+      if (task.content === value.content) {
         delete copiedValue.content;
       }
-      if (task.priority == value.priority) {
+      if (task.priority === value.priority) {
         delete copiedValue.priority;
       }
       copiedValue.id = task.getId();
@@ -148,4 +149,5 @@ export default function ({ show, onClose, onSuccess, task }: TProps) {
       </Form>
     </Container>
   );
-}
+};
+export default TaskModal;
