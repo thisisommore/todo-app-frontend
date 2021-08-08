@@ -90,7 +90,6 @@ export default function Home() {
 
   const closeTaskModal = () => {
     setShowModal(false);
-    currentEditingTask && setCurrentEditingTask(undefined);
   };
 
   const onAddClick = () => {
