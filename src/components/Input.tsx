@@ -8,12 +8,14 @@ export default styled.input`
   font-size: var(--font-sm);
   font-family: "Cascadia Code", sans-serif;
   width: 80%;
+  transition: 0.3s;
   ::placeholder {
     color: #969696;
   }
 
   :focus {
     outline: none;
+    box-shadow: 0 0 8px 2px #a700aa;
   }
 
   &.invalid {
