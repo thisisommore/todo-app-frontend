@@ -10,6 +10,7 @@ import { Task } from "../../../models/Task";
 import { Priority } from "../../../types/Priority";
 
 const Container = styled.div`
+  padding-top: 20px;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -64,8 +65,21 @@ const TaskModal = function ({ show, onClose, onSuccess, task }: TProps) {
     if (task) {
       setValue("content", task.content);
       setValue("priority", task.priority);
+    } else {
+      setValue("content", "");
+      setValue("priority", "medium");
     }
   }, [setValue, task]);
+
+  useEffect(() => {
+    const eventListnerCallBack = (event: KeyboardEvent) => {
+      if (show && event.key === "Escape") onClose?.();
+    };
+    document.addEventListener("keydown", eventListnerCallBack);
+    return () => {
+      document.removeEventListener("keydown", eventListnerCallBack);
+    };
+  }, [show, onClose]);
 
   const onSubmit = async (value: FormValue) => {
     if (task) {
@@ -121,7 +135,6 @@ const TaskModal = function ({ show, onClose, onSuccess, task }: TProps) {
         <Text>{task ? "View" : "Add"} Task</Text>
         <TextArea
           className={errors.content ? "invalid" : ""}
-          rows={10}
           placeholder="content"
           {...register("content", { required: true })}
         />
