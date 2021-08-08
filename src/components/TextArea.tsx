@@ -7,6 +7,11 @@ export default styled.textarea`
   font-size: var(--font-sm);
   font-family: "Cascadia Code", sans-serif;
   width: 80%;
+  height: ${(props) => (props.rows ? "initial" : "50vh")};
+
+  @media only screen and (max-width: 561px) {
+    width: 90%;
+  }
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
