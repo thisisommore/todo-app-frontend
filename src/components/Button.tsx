@@ -15,6 +15,17 @@ const Button = styled.button<IProps>`
   padding: 10px 25px;
   font-size: var(--font-md);
   font-family: "Cascadia Code", sans-serif;
+  transition: 0.3s;
+  @media (hover: hover) {
+    :hover {
+      transform: scale(0.94);
+      cursor: none;
+    }
+  }
+
+  :active {
+    transform: scale(1.1);
+  }
 `;
 
 type Props = PropsWithChildren<ButtonHTMLAttributes<{}>> & {
