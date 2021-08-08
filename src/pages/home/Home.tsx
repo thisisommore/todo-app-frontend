@@ -1,4 +1,4 @@
-import React, { Component, ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 
 import { deleteTask, getTasks } from "../../api/TaskAPI";
 import { userAuthSubject } from "../../api/UserAPI";
@@ -106,7 +106,7 @@ export default function Home() {
   const onTaskAddOrEditSuccess = (task: Task) => {
     if (!currentEditingTask) setTasks(tasks.concat(task));
     else {
-      setTasks(tasks.map((e) => (e.id == task.id ? task : e)));
+      setTasks(tasks.map((e) => (e.id === task.id ? task : e)));
     }
     closeTaskModal();
   };

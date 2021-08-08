@@ -55,7 +55,7 @@ export default class Select extends Component<TProps> {
           {this.props.options.map((option, i) => (
             <div
               key={i}
-              className={`item ${this.props.value == option ? "active" : ""}`}
+              className={`item ${this.props.value === option ? "active" : ""}`}
               onClick={() =>
                 this.props.onChange?.({ target: { value: option } })
               }
