@@ -147,10 +147,10 @@ export default function Home() {
       <StyledHeader>
         <Text>Tasks</Text>
 
-        <div className="add-task" onClick={onAddClick}>
+        <div className="add-task cursor-pointer" onClick={onAddClick}>
           <span className="iconify" data-icon="carbon:add-filled"></span>
         </div>
-        <p className="sign-out" onClick={signOut}>
+        <p className="sign-out cursor-pointer" onClick={signOut}>
           Signout
         </p>
         <Select
