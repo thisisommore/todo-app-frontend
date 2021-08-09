@@ -10,6 +10,7 @@ import Form from "../../components/Form";
 import Input from "../../components/Input";
 import Text from "../../components/Text";
 import { setToken } from "../../storage";
+import InfoText from "../../components/InfoText";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -77,7 +78,15 @@ export default function Signin() {
           <Button isLoading={isLoading} type="submit">
             Submit
           </Button>
+          <InfoText className="mt-4">
+            Account will be created if username doesn't exist
+          </InfoText>
+          <InfoText className="mt-4">
+            Username should be of minimun 4 charactors
+          </InfoText>
+          <InfoText>Password should be minimun 8 charactors</InfoText>
         </Form>
+
         <InfoCard className={isErrorCardVisible ? "error" : ""}>
           {error?.response?.data ?? "Error occured please try again later"}
         </InfoCard>
