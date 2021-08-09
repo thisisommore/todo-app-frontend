@@ -7,6 +7,7 @@ const Container = styled.div`
   display: inline-flex;
   align-items: center;
   font-size: var(--font-sm);
+  cursor: pointer;
 
   p {
     font-family: "Cascadia Code", sans-serif;
