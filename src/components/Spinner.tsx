@@ -3,8 +3,8 @@ import styled from "styled-components";
 export default styled.div`
   align-self: center;
   margin-left: 10px;
-  border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid #a700aa; /* Blue */
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #a700aa;
   border-radius: 50%;
   width: 20px;
   height: 20px;
